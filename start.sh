@@ -1,15 +1,3 @@
-# - Start TOR
-touch /tmp/tor.tmp
-
-echo "Bootstrapping TOR ..."
-/usr/bin/tor > /tmp/tor.tmp 2>&1 &
-
-while ! grep "Bootstrapped 100%: Done" /tmp/tor.tmp
-    do sleep 1; 
-done
-
-rm /tmp/tor.tmp
-
 # - Convert PPK file to OpenSSH
 if [ -f "/tmp/private.ppk" ]
 then
